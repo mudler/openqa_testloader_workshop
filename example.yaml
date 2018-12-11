@@ -1,0 +1,7 @@
+---
+test: obs_appliance
+vars:
+    FOO: 1
+modules:
+  - tests/boot.pm
+  - tests/rspec_webui_tests.pm

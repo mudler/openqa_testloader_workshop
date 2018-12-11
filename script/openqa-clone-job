@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+
+use FindBin;
+use lib ("$FindBin::Bin/lib","$FindBin::Bin/../lib");
+
+use OpenQA::Test::Loader;
+use feature 'say';
+
+my $client = 'openqa-clone-job';
+
+my $yaml= OpenQA::Test::Loader->new->_from_yaml('example.yaml')->_to_binary;
+
+say "$client @ARGV _TESTSPEC='$yaml'";
+system("$client @ARGV _TESTSPEC='$yaml'");
